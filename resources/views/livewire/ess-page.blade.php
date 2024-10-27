@@ -1,6 +1,6 @@
 
 <div>
-    <livewire:e-s-s-header/>
+    <livewire:ess-header/>
     <br>
-    <livewire:e-s-s-content />
+    <livewire:ess-content />
 </div>
