@@ -1,3 +1,3 @@
 <x-filament-panels::page>
-    <livewire:e-s-s-page />
+    <livewire:ess-page />
 </x-filament-panels::page>
