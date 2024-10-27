@@ -8,6 +8,7 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use App\Models\LearningManagement;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\LearningManagementResource\Pages;
@@ -26,10 +27,10 @@ class LearningManagementResource extends Resource
         return $form
             ->schema([
                 TinyEditor::make('content')
-                   ->showMenuBar()
-                   ->maxHeight(500)
-                   ->minHeight(500)
-                   ->columnSpanFull()
+                    ->showMenuBar()
+                    ->maxHeight(500)
+                    ->minHeight(500)
+                    ->columnSpanFull()
             ]);
     }
 
@@ -37,13 +38,23 @@ class LearningManagementResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('content')
+                    ->words('3')
+                    ->limit(10)
+                    ->html(),
+
+                TextColumn::make('created_at')
+                    ->label('Date Added')
+                    ->date('F d, Y H:i A')
+                    ->sortable()
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
