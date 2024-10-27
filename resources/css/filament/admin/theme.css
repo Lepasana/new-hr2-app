@@ -1,0 +1,62 @@
+@import "/vendor/filament/filament/resources/css/theme.css";
+
+@config 'tailwind.config.js';
+
+.fi-main {
+    background-color: #f8f7fa;
+}
+
+.fi-sidebar {
+    @apply me-5;
+}
+
+.fi-sidebar-header {
+    @apply shadow-md;
+}
+
+.fi-topbar {
+    @apply me-10 my-5 shadow-md;
+}
+
+.fi-sidebar-nav {
+    @apply bg-white shadow-lg dark:bg-gray-900;
+}
+
+.fi-breadcrumbs > ol > li {
+    @apply hidden;
+}
+
+.fi-form {
+    @apply bg-white shadow-md dark:bg-gray-900 p-5;
+}
+
+.fi-fo-field-wrp-label > span{
+    @apply text-gray-500;
+}
+
+.fi-sidebar-group-label {
+    @apply text-gray-500 uppercase;
+}
+
+.fi-header-heading {
+    @apply text-gray-600
+}
+
+.fi-sidebar-item-active > a {
+    background: linear-gradient(
+        72.47deg,
+        #7367f0 22.16%,
+        rgba(115, 103, 240, 0.7) 76.47%
+    );
+
+    & > svg,
+    span {
+        @apply text-white;
+    }
+
+    &:hover {
+        @apply bg-indigo-400;
+    }
+}
+
+
